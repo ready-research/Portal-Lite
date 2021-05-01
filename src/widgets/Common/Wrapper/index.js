@@ -11,7 +11,8 @@ import { useWidgetSettings } from '../../../hooks';
 const SizeMap = {
   middle: '中',
   large: '大',
-  mini: '小'
+  mini: '小',
+  fullscreen: '全'
 };
 const isExt = process.env.REACT_APP_CHROME_EXT == 'true';
 export default function WidgetWrapper({

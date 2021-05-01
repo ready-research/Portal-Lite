@@ -44,6 +44,9 @@ const BingDailyPicture = lazy(() =>
 );
 const Calc = lazy(() => import(/* webpackChunkName: "widget.calc" */ './widgets/Calc'));
 const YinNote = lazy(() => import(/* webpackChunkName: "widget.yin.note" */ './widgets/YinNote'));
+const TaskNote = lazy(() =>
+  import(/* webpackChunkName: "widget.task.note" */ './widgets/TaskNote')
+);
 
 const Webapps = Navs[0].items;
 const Tools = AllTools[0].items;
@@ -247,7 +250,7 @@ let Widgets = {
     description: '一个科学计算器',
     comp: <Calc />,
     defaultSize: 'large',
-    sizes: ['middle', 'large'],
+    sizes: ['fullscreen', 'middle', 'large'],
     disableScroll: true,
     compact: true,
     screenshot: 'https://gitee.com/zyanggc/oss/raw/master/works/widget.calc.png'
@@ -269,6 +272,14 @@ let Widgets = {
     description: '快速录入印象笔记【暂未开发】',
     disableScroll: true,
     comp: <YinNote />,
+    screenshot: 'https://gitee.com/zyanggc/oss/raw/master/works/widget.yinxiang.note.png'
+  },
+  'task-note': {
+    title: '任务笔记',
+    description: '快速录入印象笔记【暂未开发】',
+    disableScroll: true,
+    sizes: ['fullscreen', 'middle', 'large'],
+    comp: <TaskNote />,
     screenshot: 'https://gitee.com/zyanggc/oss/raw/master/works/widget.yinxiang.note.png'
   }
 };

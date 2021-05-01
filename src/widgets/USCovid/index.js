@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { utcToZonedTime } from 'date-fns-tz';
-import { subDays, format } from 'date-fns';
+// import { subDays, format } from 'date-fns';
 
 // import IconCovid from '../Common/Icons/Covid';
 import ErrorTip from '../Common/ErrorTip';
@@ -60,13 +60,15 @@ export default function USCovid() {
   // };
   useEffect(() => {
     const USDate = utcToZonedTime(new Date().getTime(), 'America/New_York');
+    console.log(USDate);
     const getData = async () => {
-      const resp = await fetch(
-        `https://api.covidtracking.com/v2beta/us/daily/${format(
-          subDays(USDate, 1),
-          'yyyy-MM-dd'
-        )}.json`
-      );
+      // const resp = await fetch(
+      //   `https://api.covidtracking.com/v2beta/us/daily/${format(
+      //     subDays(USDate, 1),
+      //     'yyyy-MM-dd'
+      //   )}.json`
+      // );
+      const resp = await fetch(`https://api.covidtracking.com/v2/us/daily/2021-02-20.json`);
       const { data } = await resp.json();
       if (!data) {
         setLoading(false);
